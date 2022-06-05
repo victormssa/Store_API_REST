@@ -2,6 +2,9 @@ POST http://localhost:3000/atendimentos HTTP/1.1
 content-type: application/json
  
 {
-    "name": "maria",
-    "time": "Wed, 21 Oct 2015 18:27:50 GMT"
+    "Cliente": "Maria",
+    "Hardware": "GTX 1050",
+    "Servico": "Check-up",
+    "Status": "Agendado",
+    "Observacoes": ""
 }
