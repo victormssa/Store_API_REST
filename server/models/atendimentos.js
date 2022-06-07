@@ -9,7 +9,7 @@ class Atendimento {
     );
 
     const dataEhValida = moment(data).isSameOrAfter(dataCriacao);
-    const clienteEhValido = atendimento.cliente.length >= 5;
+    const produtoEhValido = atendimento.produto.length >= 5;
 
     const validacoes = [
       {
@@ -18,9 +18,9 @@ class Atendimento {
         mensagem: "Data deve ser maior ou igual a data atual",
       },
       {
-        nome: "cliente",
-        valido: clienteEhValido,
-        mensagem: "Cliente deve ter pelo menos cinco caracteres",
+        nome: "produto",
+        valido: produtoEhValido,
+        mensagem: "Produto deve ter pelo menos cinco caracteres",
       },
     ];
 
