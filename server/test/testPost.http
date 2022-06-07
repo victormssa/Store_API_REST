@@ -3,7 +3,7 @@ content-type: application/json
  
 {
     "Cliente": "Maria",
-    "Hardware": "GTX 1050",
+    "Hardware": "RTX 3090",
     "Servico": "Check-up",
     "Status": "Agendado",
     "Observacoes": ""
