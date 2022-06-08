@@ -2,10 +2,10 @@ POST http://localhost:3000/atendimentos HTTP/1.1
 content-type: application/json
  
 {
-    "produto": "Maria",
-    "preço": "RTX 3090",
-    "condição": "Check-up",
-    "marca": "Agendado",
-    "descrição": "",
+    "produto": "RTX 3090",
+    "preco": "3000",
+    "condicao": "Novo",
+    "marca": "MSI",
+    "descricao": "Muito cara",
     "data": "13/10/2022"
 }

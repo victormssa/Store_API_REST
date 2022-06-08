@@ -1,4 +1,6 @@
 const Atendimento = require("../models/atendimentos");
+const multer = require("multer");
+const upload = multer({ dest: "upload/" });
 
 module.exports = (app) => {
   app.get("/atendimentos/:id", (req, res) => {
@@ -6,7 +8,8 @@ module.exports = (app) => {
     Atendimento.buscaPorId(id, res);
   });
 
-  app.post("/atendimentos", (req, res) => {
+  app.post("/atendimentos", upload.single('imagem'), (req, res) => {
+    console.log(req.file);
     const atendimento = req.body;
     Atendimento.adiciona(atendimento, res);
   });

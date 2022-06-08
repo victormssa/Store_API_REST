@@ -32,7 +32,7 @@ class Atendimento {
     } else {
       const atendimentoDatado = { ...atendimento, dataCriacao, data };
 
-      const sql = "INSERT INTO Atendimentos SET ?";
+      const sql = "INSERT INTO Produtos SET ?";
 
       conexao.query(sql, atendimentoDatado, (erro, resultados) => {
         if (erro) {
@@ -45,7 +45,7 @@ class Atendimento {
   }
 
   lista(res) {
-    const sql = "SELECT * FROM Atendimentos";
+    const sql = "SELECT * FROM Produtos";
 
     conexao.query(sql, (erro, resultados) => {
       if (erro) {
@@ -57,7 +57,7 @@ class Atendimento {
   }
 
   buscaPorId(id, res) {
-    const sql = `SELECT * FROM Atendimentos WHERE id=${id}`; // template string do javascript
+    const sql = `SELECT * FROM Produtos WHERE id=${id}`; // template string do javascript
 
     conexao.query(sql, (erro, resultados) => {
       const atendimento = resultados[0];
@@ -75,7 +75,7 @@ class Atendimento {
         "YYYY-MM-DD HH:MM:SS"
       );
     }
-    const sql = "UPDATE Atendimentos SET ? WHERE id=?";
+    const sql = "UPDATE Produtos SET ? WHERE id=?";
     conexao.query(sql, [valores, id], (erro, resultados) => {
       if (erro) {
         res.status(400).json(erro);
@@ -86,7 +86,7 @@ class Atendimento {
   }
 
   deleta(id, res) {
-    const sql = "DELETE FROM Atendimentos WHERE id=?";
+    const sql = "DELETE FROM Produtos WHERE id=?";
 
     conexao.query(sql, id, (erro, resultados) => {
       if (erro) {
