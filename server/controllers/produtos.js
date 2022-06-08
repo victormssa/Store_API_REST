@@ -4,14 +4,15 @@ const upload = multer({ dest: "upload/" });
 
 module.exports = (app) => {
   app.get("/produtos/:id", (req, res) => {
+    const id = parseInt(req.params.id);
     console.log(req.params.id);
     produto.buscaPorId(id, res);
   });
 
   app.post("/produtos", upload.single('imagem'), (req, res) => {
     console.log(req.file);
-    const produto = req.body;
-    produto.adiciona(produto, res);
+    const produtos = req.body;
+    produto.adiciona(produtos, res);
   });
 
   app.patch("/produtos/:id", (req, res) => {
