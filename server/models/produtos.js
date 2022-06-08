@@ -1,15 +1,15 @@
 const moment = require("moment");
 const conexao = require("../connection/conexao");
 
-class Atendimento {
-  adiciona(atendimento, res) {
+class Produto {
+  adiciona(produto, res) {
     const dataCriacao = moment().format("YYYY-MM-DD HH:mm:ss");
-    const data = moment(atendimento.data, "DD/MM/YYYY").format(
+    const data = moment(produto.data, "DD/MM/YYYY").format(
       "YYYY-MM-DD HH:mm:ss"
     );
 
     const dataEhValida = moment(data).isSameOrAfter(dataCriacao);
-    const produtoEhValido = atendimento.produto.length >= 5;
+    const produtoEhValido = produto.produto.length >= 5;
 
     const validacoes = [
       {
@@ -30,11 +30,11 @@ class Atendimento {
     if (existemErros) {
       res.status(400).json(erros);
     } else {
-      const atendimentoDatado = { ...atendimento, dataCriacao, data };
+      const produtoDatado = { ...produto, dataCriacao, data };
 
       const sql = "INSERT INTO Produtos SET ?";
 
-      conexao.query(sql, atendimentoDatado, (erro, resultados) => {
+      conexao.query(sql, produtoDatado, (erro, resultados) => {
         if (erro) {
           res.status(400).json(erro);
         } else {
@@ -60,7 +60,7 @@ class Atendimento {
     const sql = `SELECT * FROM Produtos WHERE id=${id}`; // template string do javascript
 
     conexao.query(sql, (erro, resultados) => {
-      const atendimento = resultados[0];
+      const produto = resultados[0];
       if (erro) {
         res.status(400).json(erro);
       } else {
@@ -98,4 +98,4 @@ class Atendimento {
   }
 }
 
-module.exports = new Atendimento();
+module.exports = new Produto();
