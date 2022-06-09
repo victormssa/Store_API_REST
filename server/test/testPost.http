@@ -7,5 +7,6 @@ content-type: application/json
     "condicao": "Novo",
     "marca": "MSI",
     "descricao": "Muito cara",
+    "img": "",
     "data": "13/10/2022"
 }
