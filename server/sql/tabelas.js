@@ -5,7 +5,10 @@ class Tabelas {
 
     this.criarProdutos();
     this.inserirAuto();
-  } 
+  }
+
+
+
 
   criarProdutos() {
     const sql =
@@ -22,7 +25,7 @@ class Tabelas {
 
   inserirAuto() {
     const inserir = 
-      "INSERT INTO Produtos (produto, preco, condicao, marca, descricao, imagem, data) VALUES ('RTX 3090', '15.000 Reais', 'Lançamento', 'MSI', 'Descrição', 'https://i.ebayimg.com/images/g/D3QAAOSw9gJf6c55/s-l600.jpg', '25/04/2023')";
+      "REPLACE INTO Produtos (id,produto, preco, condicao, marca, descricao, imagem, data) VALUES ('1','RTX 3090', '15.000 Reais', 'Lançamento', 'MSI', 'Descrição', 'https://i.ebayimg.com/images/g/D3QAAOSw9gJf6c55/s-l600.jpg', '25/04/2023')";
 
     this.inserir.query(inserir, (erro) => {
       if (erro) {
