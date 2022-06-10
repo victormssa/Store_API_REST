@@ -12,7 +12,7 @@ function fazPost(url, body){
 }
 
 function cadastraProduto(){
-    //preventDefault()
+    preventDefault()
     let url = "http://localhost:3000/produtos";
 
     let produto = document.getElementById("produto").value;
