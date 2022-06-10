@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BINVC</title>
+    <style>
+      * {
+        font-family: Arial;
+      }
+      #root {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      .card {
+        margin: 1rem;
+        border: 1px solid gray;
+      }
+
+      @media screen and (min-width: 600px) {
+        .card {
+          flex: 1 1 calc(50% - 2rem);
+        }
+      }
+
+      @media screen and (min-width: 900px) {
+        .card {
+          flex: 1 1 calc(33% - 2rem);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="root"></div>
+
+    <script>
+      // Create a request variable and assign a new XMLHttpRequest object to it.
+      var request = new XMLHttpRequest();
+
+      // Open a new connection, using the GET request on the URL endpoint
+      request.open("GET", "http://localhost:3000/produtos", true);
+
+      const app = document.getElementById("root");
+      const container = document.createElement("div");
+      container.setAttribute("class", "container");
+      app.appendChild(container);
+
+      request.onload = function () {
+        // Begin accessing JSON data here
+        var data = JSON.parse(this.response);
+
+        //produto, preco, condicao, marca, descricao, imagem, data
+        if (request.status >= 200 && request.status < 400) {
+          data.forEach((produto) => {
+            console.log(produto);
+
+            // cria uma section com a classe card
+            const card = document.createElement("section");
+            card.setAttribute("class", "card");
+
+            // cria h1 com o nome do cliente
+            const h1 = document.createElement("h1");
+            h1.textContent = produto.produto;
+
+            // Cria elementos p e preenche com informacoes dos atendimentos
+            const pPreco = document.createElement("p");
+            pPreco.textContent = `preco: ${produto.preco}`;
+
+            const pCondicao = document.createElement("p");
+            pCondicao.textContent = `condicao: ${produto.condicao}`;
+
+            const pMarca = document.createElement("p");
+            pMarca.textContent = `marca: ${produto.marca}`;
+
+            const pDescricao = document.createElement("p");
+            produto.descricao = produto.descricao.substring(0, 300); // Limit to 300 chars
+            pDescricao.textContent = `descricao: ${produto.descricao}...`;
+
+            const img = document.createElement("img");
+            img.textContent = `produto.imagem`;
+
+            // Append the cards to the container element
+            container.appendChild(card);
+
+            // Each card will contain an h1 and a p
+            card.appendChild(h1);
+            card.appendChild(pPreco);
+            card.appendChild(pCondicao);
+            card.appendChild(pMarca);
+            card.appendChild(pDescricao);
+            card.appendChild(img);
+            
+          });
+        } else {
+          console.log("error");
+        }
+      };
+
+      // Send request
+      request.send();
+    </script>
+  </body>
+</html>

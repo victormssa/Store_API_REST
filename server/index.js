@@ -11,6 +11,6 @@ conexao.connect((erro) => {
     Tabelas.init(conexao);
     const app = customExpress();
 
-    app.listen(3000, () => console.log("Servidor está rodando dentro da porta 3000"));
+    app.listen(3000, () => console.log("Servidor está rodando em http://localhost:3000"));
   }
 });
