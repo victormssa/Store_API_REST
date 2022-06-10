@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BINVC</title>
+    <title>Document</title>
     <style>
       * {
         font-family: Arial;
@@ -48,9 +48,9 @@
       // Open a new connection, using the GET request on the URL endpoint
       request.open("GET", "http://localhost:3000/produtos", true);
 
-      const app = document.getElementById("root");
-      const container = document.createElement("div");
-      container.setAttribute("class", "container");
+      const app = document.getElementById('root');
+      const container = document.createElement('div');
+      container.setAttribute('class', 'container');
       app.appendChild(container);
 
       request.onload = function () {
@@ -59,33 +59,33 @@
 
         //produto, preco, condicao, marca, descricao, imagem, data
         if (request.status >= 200 && request.status < 400) {
-          data.forEach((produto) => {
-            console.log(produto);
+          data.forEach(produto => {
+            console.log(produto)
 
             // cria uma section com a classe card
-            const card = document.createElement("section");
-            card.setAttribute("class", "card");
+            const card = document.createElement('section')
+            card.setAttribute('class', 'card')
 
             // cria h1 com o nome do cliente
-            const h1 = document.createElement("h1");
+            const h1 = document.createElement('h1')
             h1.textContent = produto.produto;
 
             // Cria elementos p e preenche com informacoes dos atendimentos
-            const pPreco = document.createElement("p");
-            pPreco.textContent = `preco: ${produto.preco}`;
+            const pPreco = document.createElement('p')
+            pPreco.textContent = `preco: ${produto.preco}`
 
-            const pCondicao = document.createElement("p");
-            pCondicao.textContent = `condicao: ${produto.condicao}`;
+            const pCondicao = document.createElement("p")
+            pCondicao.textContent = `condicao: ${produto.condicao}`
 
-            const pMarca = document.createElement("p");
-            pMarca.textContent = `marca: ${produto.marca}`;
+            const pMarca = document.createElement("p")
+            pMarca.textContent = `marca: ${produto.marca}`
 
-            const pDescricao = document.createElement("p");
+            const pDescricao = document.createElement("p")
             produto.descricao = produto.descricao.substring(0, 300); // Limit to 300 chars
-            pDescricao.textContent = `descricao: ${produto.descricao}...`;
+            pDescricao.textContent = `descricao: ${produto.descricao}...`
 
-            const img = document.createElement("img");
-            img.textContent = `produto.imagem`;
+            /*const img = document.createElement("img");
+            img.textContent = `produto.imagem`;*/
 
             // Append the cards to the container element
             container.appendChild(card);
@@ -98,14 +98,14 @@
             card.appendChild(pDescricao);
             card.appendChild(img);
             
-          });
+          })
         } else {
           console.log("error");
         }
-      };
+      }
 
       // Send request
-      request.send();
+      request.send()
     </script>
   </body>
 </html>

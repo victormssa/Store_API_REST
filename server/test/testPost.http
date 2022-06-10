@@ -1,12 +1,11 @@
 POST http://localhost:3000/produtos HTTP/1.1
 content-type: application/json
- 
+
 {
-    "produto": "RTX 3090",
-    "preco": "3000",
-    "condicao": "Novo",
-    "marca": "MSI",
-    "descricao": "Muito cara",
-    "imagem": "https://i.ebayimg.com/images/g/D3QAAOSw9gJf6c55/s-l600.jpg",
-    "data": "13/10/2022"
+    "produto": "kkkkk",
+    "preco": "k",
+    "condicao": "k",
+    "marca": "k",
+    "descricao": "k",
+    "imagem": "https://i.ebayimg.com/images/g/D3QAAOSw9gJf6c55/s-l600.jpg"
 }

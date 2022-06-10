@@ -1,6 +1,6 @@
 const produto = require("../models/produtos");
 const multer = require("multer");
-const upload = multer({ dest: "upload/" });
+
 
 module.exports = (app) => {
   app.get("/produtos/:id", (req, res) => {
@@ -9,10 +9,16 @@ module.exports = (app) => {
     produto.buscaPorId(id, res);
   });
 
-  app.post("/produtos", upload.single('imagem'), (req, res) => {
-    console.log(req.file);
+  app.post("/produtos", (req, res) => {
+    
     const produtos = req.body;
-    produto.adiciona(produtos, res);
+      produtos.produto,
+      produtos.preco,
+      produtos.condicao,
+      produtos.marca,
+      produtos.descricao,
+      produtos.imagem,
+      produto.adiciona(produtos, res);
   });
 
   app.patch("/produtos/:id", (req, res) => {

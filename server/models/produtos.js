@@ -3,20 +3,8 @@ const conexao = require("../connection/conexao");
 
 class Produto {
   adiciona(produto, res) {
-    const dataCriacao = moment().format("YYYY-MM-DD HH:mm:ss");
-    const data = moment(produto.data, "DD/MM/YYYY").format(
-      "YYYY-MM-DD HH:mm:ss"
-    );
-
-    const dataEhValida = moment(data).isSameOrAfter(dataCriacao);
     const produtoEhValido = produto.produto.length >= 5;
-
     const validacoes = [
-      {
-        nome: "data",
-        valido: dataEhValida,
-        mensagem: "Data deve ser maior ou igual a data atual",
-      },
       {
         nome: "produto",
         valido: produtoEhValido,
@@ -30,7 +18,7 @@ class Produto {
     if (existemErros) {
       res.status(400).json(erros);
     } else {
-      const produtoDatado = { ...produto, dataCriacao, data };
+      const produtoDatado = { ...produto };
 
       const sql = "INSERT INTO Produtos SET ?";
 
@@ -70,11 +58,7 @@ class Produto {
   }
 
   altera(id, valores, res) {
-    if (valores.data) {
-      valores.data = moment(valores.data, "DD/MM/YYYY").format(
-        "YYYY-MM-DD HH:MM:SS"
-      );
-    }
+  
     const sql = "UPDATE Produtos SET ? WHERE id=?";
     conexao.query(sql, [valores, id], (erro, resultados) => {
       if (erro) {
