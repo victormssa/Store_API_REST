@@ -13,5 +13,6 @@ conexao.connect((erro) => {
     const app = customExpress();
 
     app.listen(3000, () => console.log("Servidor está rodando em http://localhost:3000"));
+    app.get('/produtos', (req, res) => res.send('Você está na rota de produtos'))
   }
 });

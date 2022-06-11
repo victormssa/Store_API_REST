@@ -8,6 +8,9 @@ module.exports = (app) => {
     console.log(req.params.id);
     produto.buscaPorId(id, res);
   });
+  app.get("/produtos",(req, res)=>{
+    produto.lista(res);
+  })
 
   app.post("/produtos", (req, res) => {
     
