@@ -6,22 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BINVC</title>
     <link rel="stylesheet" href="style/style.css">
+    <link rel="icon" href="img/favicon-32x32.png"" type="image/png">
   </head>
 
   <body>
-    
-    <section id="header">
-      <a href="index.html"><img src="img/logo.jpg" alt="logo" class="logo"></a>
+    <header id="header">
+      <img src="img/logo.png" alt="logo" class="logo">
 
   <!--Navbar(Header)-->
-  <div>
+
+  <nav>
       <ul id="navbar">
-          <li><a class="active" href="index.html">Ínicio</a></li>
-          <li><a href="formulario.html">Inserir</a></li>
+          <li><a class="active" href="index.html">ÍNICIO</a></li>
+          <li><a href="formulario.html">INSERIR</a></li>
           
       </ul>
-  </div>
-  </section>
+  </nav>
+  </header>
 
     <div id="root"></div>
 
@@ -57,17 +58,25 @@
 
             // Cria elementos p e preenche com informacoes dos atendimentos
             const pPreco = document.createElement('p')
-            pPreco.textContent = `preco: ${produto.preco}`
+            pPreco.textContent = `Preço: ${produto.preco}`
 
-            const pCondicao = document.createElement("p")
-            pCondicao.textContent = `condicao: ${produto.condicao}`
+            const pCondicao = document.createElement('p')
+            pCondicao.textContent = `Condição: ${produto.condicao}`
 
-            const pMarca = document.createElement("p")
-            pMarca.textContent = `marca: ${produto.marca}`
+            const pMarca = document.createElement('p')
+            pMarca.textContent = `Marca: ${produto.marca}`
 
-            const pDescricao = document.createElement("p")
+            const pDescricao = document.createElement('p')
             produto.descricao = produto.descricao.substring(0, 300); // Limit to 300 chars
-            pDescricao.textContent = `descricao: ${produto.descricao}...`
+            pDescricao.textContent = `Descrição: ${produto.descricao}...`
+
+            const img = document.createElement('img')
+            img.src = produto.imagem
+            img.setAttribute('class', 'foto')
+
+            /*const img = document.createElement('img');
+            img.src = [produto.imagem];
+            document.getElementById('theElementYouWantToInsertTheImgIn').appendChild(img);*/
 
            
 
@@ -80,6 +89,7 @@
             card.appendChild(pCondicao);
             card.appendChild(pMarca);
             card.appendChild(pDescricao);
+            card.appendChild(img);
             
           })
         } else {
@@ -90,5 +100,6 @@
       // Send request
       request.send()
     </script>
+   
   </body>
 </html>
