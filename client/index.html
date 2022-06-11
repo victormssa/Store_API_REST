@@ -68,7 +68,8 @@
 
             const pDescricao = document.createElement('p')
             produto.descricao = produto.descricao.substring(0, 300); // Limit to 300 chars
-            pDescricao.textContent = `Descrição: ${produto.descricao}...`
+            pDescricao.textContent = `Descrição: ${produto.descricao}`
+            
 
             const img = document.createElement('img')
             img.src = produto.imagem
