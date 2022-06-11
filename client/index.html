@@ -4,41 +4,25 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <style>
-      * {
-        font-family: Arial;
-      }
-      #root {
-        max-width: 1200px;
-        margin: 0 auto;
-      }
-
-      .container {
-        display: flex;
-        flex-wrap: wrap;
-      }
-
-      .card {
-        margin: 1rem;
-        border: 1px solid gray;
-      }
-
-      @media screen and (min-width: 600px) {
-        .card {
-          flex: 1 1 calc(50% - 2rem);
-        }
-      }
-
-      @media screen and (min-width: 900px) {
-        .card {
-          flex: 1 1 calc(33% - 2rem);
-        }
-      }
-    </style>
+    <title>BINVC</title>
+    <link rel="stylesheet" href="style/style.css">
   </head>
 
   <body>
+    
+    <section id="header">
+      <a href="index.html"><img src="img/logo.jpg" alt="logo" class="logo"></a>
+
+  <!--Navbar(Header)-->
+  <div>
+      <ul id="navbar">
+          <li><a class="active" href="index.html">Ínicio</a></li>
+          <li><a href="formulario.html">Inserir</a></li>
+          
+      </ul>
+  </div>
+  </section>
+
     <div id="root"></div>
 
     <script>

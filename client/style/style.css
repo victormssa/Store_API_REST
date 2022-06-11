@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100&display=swap');
+
+
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+  #root {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .card {
+    margin: 1rem;
+    border: 1px solid gray;
+  }
+
+  @media screen and (min-width: 600px) {
+    .card {
+      flex: 1 1 calc(50% - 2rem);
+    }
+  }
+
+  @media screen and (min-width: 900px) {
+    .card {
+      flex: 1 1 calc(33% - 2rem);
+    }
+  }
+
+  .logo{
+    height: 100px;
+  }
+
+#header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 80px;
+    background: #1956B4;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+    z-index: 999;
+    position: sticky;
+    top: 0;
+    left: 0;
+}
+
+#navbar{
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#navbar li{
+    list-style: none;
+    padding: 0 20px;
+    position: relative;
+
+}
+
+#navbar li a{
+    text-decoration: none;
+    font-size: 25px;
+    font-weight: 600;
+    color: #ffffff;
+    transition: 0.3s ease;
+}
+
+#navbar li a:hover,
+#navbar li a.active{    
+    color: #ffffff;
+}
+
+#navbar li a.active::after,
+#navbar li a:hover::after{
+    content: "";
+    width: 30%;
+    height: 2px;
+    background-color: #ffffff;
+    position: absolute;
+    bottom: -4px;
+    left: 20px;
+}
+
+body{
+    background-color: #1a1a1a;
+}
+
+h1{
+    
+    font-size: 20px;
+    margin-top: 5px;
+    
+    
+}
+
+strong{
+    color: white;
+}
+
+h2{
+    font-size: 10px;
+}
+
+p{
+    font-family: 'Poppins', sans-serif;
+    font-size: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    text-align: left;
+    margin-left: 10px;
+    margin-right: 10px;
+    color: white;
+    
+}
+
+#explicacao{
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 15px;
+    
+}
+
+h1, h2, h3{
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    
+    color: white;
+}
+
+pre{
+    color: white;
+}
+
+code{
+    color: white;
+    font-size: 18px;
+}
+
+
+fieldset{
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    border-color: #1956B4;
+    border-radius: 2px;
+    margin-left: 300px;
+    margin-right: 300px;
+}
+
+hr{
+    
+    height: 2px;
+    background-color: white;
+    border-color: white ;
+    margin-top: 30px;
+}
+
+footer{
+    display: block;
+	position: static;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+    height: 30px;
+	background-color: #1956B4;
+	align-items: center;
+	text-align: center;
+	justify-content: space-around;
+}
+
+.texto_footer{
+    margin-bottom: 5px;
+    color: #1a1a1a;
+    list-style: none;
+    text-decoration: none;
+}
