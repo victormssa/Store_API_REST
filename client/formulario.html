@@ -4,49 +4,54 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>BINVC</title>
+        <title>BINV</title>
         <link rel="stylesheet" href="style/style.css">
+        <link rel="icon" href="img/favicon-32x32.png"" type="image/png">
     </head>
     <body>
-    
+        <!--Header-->
         <header id="header">
            <img src="img/logo.png" alt="logo" class="logo">
       
-        <!--Navbar(Header)-->
-      
-        <nav>
-           <ul id="navbar">
-                <li><a href="index.html">ÍNICIO</a></li>
-                <li><a class="active" href="formulario.html">INSERIR</a></li>
-           </ul>
-        </nav>
+            <!--Navbar(Header)-->
+            <nav>
+            <ul id="navbar">
+                    <li><a href="index.html">ÍNICIO</a></li>
+                    <li><a class="active" href="formulario.html">INSERIR</a></li>
+            </ul>
+            </nav>
         </header>
+
+        
+        <form action = "http://localhost:3000/produtos" method="POST" class="insere">
             
-                
-                <form action = "http://localhost:3000/produtos" method="POST" class="insere">
-                    <h1>Insira um produto abaixo,</h1>
-                    <label for="produto">Produto</label>
-                    <input name="produto" id="produto" type="text">
-                    <br>
-                    <label for="preco">Preço</label>
-                    <input name="preco" id="preco" type="text">
-                    <br>
-                    <label for="condicao">Condicao</label>
-                    <input name="condicao" id="condicao" type="text">
-                    <br>
-                    <label for="marca">Marca</label>
-                    <input name="marca" id="marca" type="text">
-                    <br>
-                    <label for="descricao">Descricao</label>
-                    <input name="descricao" id="descricao" type="text">
-                    <br>
-                    <label for="imagem">Imagem</label>
-                    <input name="imagem" id="imagem" type="text">
-                    <br>
-                    <button class="button" style="vertical-align:middle" type="submit"><span>Enviar </span></button>
-                </form >
-            </div>
             
+            <fieldset>
+                <legend>
+                    <h1>Insira um produto abaixo</h1>
+                </legend>
+                <label for="produto">Produto</label>
+                <input name="produto" id="produto" type="text" placeholder="Nome do produto">
+                <br>
+                <label for="preco">Preço</label>
+                <input name="preco" id="preco" type="text" placeholder="Preço do produto">
+                <br>
+                <label for="condicao">Condição</label>
+                <input name="condicao" id="condicao" type="text" placeholder="Condição do produto">
+                <br>
+                <label for="marca">Marca</label>
+                <input name="marca" id="marca" type="text" placeholder="Marca do produto">
+                <br>
+                <label for="descricao">Descrição</label>
+                <input name="descricao" id="descricao" type="text" placeholder="Descrição do produto">
+                <br>
+                <label for="imagem">Imagem</label>
+                <input name="imagem" id="imagem" type="url" placeholder="URL da Imagem">
+                <br>
+                <button class="button" style="vertical-align:middle" type="submit"><span>Enviar </span></button>
+            </fieldset>
+        </form>
+    </div>
         
     </body>
 </html>

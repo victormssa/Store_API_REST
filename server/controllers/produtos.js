@@ -1,6 +1,4 @@
 const produto = require("../models/produtos");
-const multer = require("multer");
-
 
 module.exports = (app) => {
   app.get("/produtos/:id", (req, res) => {
