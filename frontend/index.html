@@ -15,7 +15,6 @@
       <img src="img/logo.png" alt="logo" class="logo">
 
   <!--Navbar(Header)-->
-
   <nav>
       <ul id="navbar">
           <li><a class="active" href="index.html">ÍNICIO</a></li>
@@ -29,10 +28,10 @@
     <div id="root"></div>
 
     <script>
-      // Create a request variable and assign a new XMLHttpRequest object to it.
+      // Criando uma variavel e dando a ela um objeto new XMLHttpRequest.
       var request = new XMLHttpRequest();
       var url = 'http://localhost:3000/produtos'
-      // Open a new connection, using the GET request on the URL endpoint
+      // Abre uma nova conexão, usando o GET no endpoint do URL.
       request.open("GET", url, true);
 
       const app = document.getElementById('root');
@@ -41,7 +40,7 @@
       app.appendChild(container);
 
       request.onload = function () {
-        // Begin accessing JSON data here
+        // Começa a acessar o dado em JSON aqui.
         var data = JSON.parse(request.response);
         console.log(data);
 
@@ -49,7 +48,7 @@
         if (request.status >= 200 && request.status < 400) {
           data.forEach(produto => {
             console.log(produto)
-
+            
             // cria uma section com a classe card
             const card = document.createElement('section')
             card.setAttribute('class', 'card')
@@ -59,7 +58,7 @@
             h1.textContent = produto.produto;
 
             // Cria elementos p e preenche com informacoes dos atendimentos
-            const pPreco = document.createElement('p')
+            const pPreco = document.createElement('P')
             pPreco.textContent = `Preço: ${produto.preco}`
 
             const pCondicao = document.createElement('p')
